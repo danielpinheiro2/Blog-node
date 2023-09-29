@@ -6,3 +6,4 @@ npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 body-
 npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 --save mongoose
 
 npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 -g nodemon
+33 5:18
