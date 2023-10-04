@@ -33,7 +33,7 @@ router.post('/categorias/nova', (req,res) => {
         
         console.log("categoria salva com sucesso!")
     }).catch((err) => {
-        console.log("Erro ao salva categoria!")
+        console.log("Erro ao salvar categoria!")
     })
 })
 module.exports = router
