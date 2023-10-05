@@ -16,8 +16,13 @@ router.get('/posts', (req,res) => {
     res.send("Página de posts")
 })
 
-router.get('/categorias', (req,res) => {
-    res.render("admin/categorias")
+router.get('/categorias', (req, res) => {
+    Categoria.find().sort({date: 'desc'}).lean().then((categorias) => {
+        res.render('admin/categorias', {categorias: categorias})
+    }).catch((err) => {
+        req.flash('error_msg', 'Erro ao listar categorias')
+        res.redirect('/admin')
+    })
 })
 
 router.get('/categorias/add', (req,res) => {
@@ -51,4 +56,10 @@ router.post('/categorias/nova', (req,res) => {
         })
     }
 })
+
+router.get("/categorias/edit/:id", (req,res) =>{
+    Categoria.findOne({_id:req.body.id}).then()
+    res.render("admin/editcategorias")
+})
+
 module.exports = router
