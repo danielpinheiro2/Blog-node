@@ -67,9 +67,10 @@ router.get("/categorias/edit/:id", (req,res) => {
 })
 
 router.post("/categorias/edit", (req, res) => {
+    // validação
    Categoria.findOne({_id: req.body.id}).then((categoria) => {
         categoria.nome = req.body.nome
-        categoria.nome = req.body.slug
+        categoria.slug = req.body.slug
 
         categoria.save().then(() => {
             req.flash("success_msg", "Categoria editada com sucesso!")
@@ -82,7 +83,6 @@ router.post("/categorias/edit", (req, res) => {
         req.flash("error_msg", "Houve um erro ao editar categoria!")
         res.redirect("/admin/categorias")    
    })
-
 })
 
 router.post("/categorias/deletar", (req,res) => {
@@ -95,5 +95,17 @@ router.post("/categorias/deletar", (req,res) => {
     })
 })
 
+router.get('/postagens', (req, res) => {
+    res.render("admin/postagens")
+})
+
+router.get('/postagens/add', (req,res) => {
+    Categoria.find().lean().then((categorias) => {
+        res.render("admin/addpostagem", {categorias: categorias})
+    }).catch((err) => {
+        req.flash("error_msg", "Houve um erro ao deletar a categoria!")
+        res.redirect("/admin/categorias")
+    })
+})
 
 module.exports = router
