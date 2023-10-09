@@ -6,13 +6,13 @@
 <div class="card">
     <div class="card-body">
         <h3>Nova postagem: </h3>
-        <form action="">
+        <form action="/admin/postagens/nova" method="POST">
             <label for="titulo">Titulo</label>
             <input type="text" name="titulo" placeholder="Titulo" class="form-control">
             <label for="Slug">Slug</label>
             <input type="text" id="slug" name="slug" placeholder="Slug" class="form-control">
             <label for="descricao">Descrição</label>
-            <input type="text" id="nome" name="nome" placeholder="Nome da categorias" class="form-control">
+            <input type="text" id="descricao" name="descricao" placeholder="Descrição da categoria" class="form-control">
             <label for="conteudo">Conteúdo</label>
             <textarea name="conteudo" placeholder="Conteúdo" class="form-control"></textarea>
             <br>
