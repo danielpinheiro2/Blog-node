@@ -7,4 +7,6 @@ npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 -g no
 npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 --save express-session
 npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 --save connect-flash 
 npm install --save bcryptjs
-56
+npm install --save passport
+npm install --save passport-local
+58
