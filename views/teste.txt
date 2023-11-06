@@ -9,4 +9,4 @@ npm install --proxy=http://danielpinheiro:@sesa2.proxy.dcpr.es.gov.br:1892 --sav
 npm install --save bcryptjs
 npm install --save passport
 npm install --save passport-local
-58
+60

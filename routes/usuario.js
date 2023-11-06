@@ -41,7 +41,7 @@ router.post("/registro", (req, res) => {
                 const novoUsuario = new Usuario({
                     nome: req.body.nome,
                     email: req.body.email,
-                    senha: req.body.senha
+                    senha: req.body.senha,
                 })
                 bcrypt.genSalt(10, (erro, salt) => {
                     bcrypt.hash(novoUsuario.senha, salt, (erro, hash) => {
@@ -52,7 +52,7 @@ router.post("/registro", (req, res) => {
                         novoUsuario.senha = hash
 
                         novoUsuario.save().then(() => {
-                            req.flash("sucess_msg", "Usuario criado com sucesso!")
+                            req.flash("success_msg", "Usuario criado com sucesso! Faça o login para acessar sua conta.")
                             res.redirect("/")
                         }).catch((err) => {
                             req.flash("error_msg", "Houve um erro ao criar o usario, tente novamente!")
